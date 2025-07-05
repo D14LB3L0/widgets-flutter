@@ -6,3 +6,4 @@ export 'home_screen.dart';
 export 'inputs_screen.dart';
 export 'list_view1_screen.dart';
 export 'list_view2_screen.dart';
+export 'slider_screen.dart';
