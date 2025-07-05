@@ -3,28 +3,58 @@ import 'package:flutter/material.dart';
 import 'package:fl_components/screens/screens.dart';
 import 'package:fl_components/models/menu_option.dart';
 
-
 class AppRoutes {
   static const initialRoute = 'Home';
 
   static final menuOptions = <MenuOptions>[
-    MenuOptions(route: 'home', name: 'Home Screen', screen: const HomeScreen(), icon: Icons.home_outlined),
-    MenuOptions(route: 'listview1', name: 'List View 1', screen: const Listview1Screen(), icon: Icons.list_alt),
-    MenuOptions(route: 'listview2', name: 'List View 2', screen: const Listview2Screen(), icon: Icons.list_alt),
-    MenuOptions(route: 'alert', name: 'Alert', screen: const AlertScreen(), icon: Icons.add_alert_outlined),
-    MenuOptions(route: 'card', name: 'Card', screen: const CardScreen(), icon: Icons.credit_card),
-    MenuOptions(route: 'avatar', name: 'Avatar', screen: const AvatarScreen(), icon: Icons.supervised_user_circle_outlined)
+    // MenuOptions(route: 'home', name: 'Home Screen', screen: const HomeScreen(), icon: Icons.home_outlined),
+    MenuOptions(
+      route: 'listview1',
+      name: 'List View 1',
+      screen: const Listview1Screen(),
+      icon: Icons.list_alt,
+    ),
+    MenuOptions(
+      route: 'listview2',
+      name: 'List View 2',
+      screen: const Listview2Screen(),
+      icon: Icons.list_alt,
+    ),
+    MenuOptions(
+      route: 'alert',
+      name: 'Alert',
+      screen: const AlertScreen(),
+      icon: Icons.add_alert_outlined,
+    ),
+    MenuOptions(
+      route: 'card',
+      name: 'Card',
+      screen: const CardScreen(),
+      icon: Icons.credit_card,
+    ),
+    MenuOptions(
+      route: 'avatar',
+      name: 'Avatar',
+      screen: const AvatarScreen(),
+      icon: Icons.supervised_user_circle_outlined,
+    ),
+    MenuOptions(
+      route: 'animated',
+      name: 'Animated Container',
+      screen: const AnimatedScreen(),
+      icon: Icons.play_circle_outline_rounded,
+    ),
   ];
 
-  static Map<String, Widget Function(BuildContext)> getAppRoutes(){
-    
+  static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
-    
+    appRoutes.addAll({'home': (BuildContext context) => const HomeScreen()});
+
     for (var option in menuOptions) {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
     }
 
-    return  appRoutes;
+    return appRoutes;
   }
 
   // static Map<String, Widget Function(BuildContext)> routes = {
