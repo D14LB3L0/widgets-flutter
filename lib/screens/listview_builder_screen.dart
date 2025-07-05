@@ -39,9 +39,7 @@ class _ListviewBuilderScreenState extends State<ListviewBuilderScreen> {
     isLoading = false;
     setState(() {});
 
-    if (scrollController.position.pixels + 100 <=
-        scrollController.position.maxScrollExtent)
-      return;
+    if (scrollController.position.pixels + 100 <= scrollController.position.maxScrollExtent) return;
 
     scrollController.animateTo(
       scrollController.position.pixels + 120,
@@ -101,7 +99,7 @@ class _ListviewBuilderScreenState extends State<ListviewBuilderScreen> {
               Positioned(
                 bottom: 40,
                 left: size.width * 0.5 - 30,
-                child: const _Loading_icon(),
+                child: const Loadingicon(),
               ),
           ],
         ),
@@ -110,8 +108,8 @@ class _ListviewBuilderScreenState extends State<ListviewBuilderScreen> {
   }
 }
 
-class _Loading_icon extends StatelessWidget {
-  const _Loading_icon({super.key});
+class Loadingicon extends StatelessWidget {
+  const Loadingicon({super.key});
 
   @override
   Widget build(BuildContext context) {
