@@ -25,19 +25,28 @@ class InputsScreen extends StatelessWidget {
           key: myFormKey,
           child: Column(
             children: [
-              CustomInputField(labelText: 'Name', hintText: 'User name', formPropery: 'first_name', formValues: formValues,),
+              CustomInputField(
+                labelText: 'Name',
+                hintText: 'User name',
+                formPropery: 'first_name',
+                formValues: formValues,
+              ),
               SizedBox(height: 30),
 
               CustomInputField(
                 labelText: 'Last name',
-                hintText: 'User last name', formPropery: 'last_name', formValues: formValues,
+                hintText: 'User last name',
+                formPropery: 'last_name',
+                formValues: formValues,
               ),
               SizedBox(height: 30),
 
               CustomInputField(
                 labelText: 'Email',
                 hintText: 'Email',
-                keyBoardType: TextInputType.emailAddress, formPropery: 'email', formValues: formValues,
+                keyBoardType: TextInputType.emailAddress,
+                formPropery: 'email',
+                formValues: formValues,
               ),
               SizedBox(height: 30),
 
@@ -45,9 +54,24 @@ class InputsScreen extends StatelessWidget {
                 labelText: 'Password',
                 hintText: 'Password',
                 keyBoardType: TextInputType.emailAddress,
-                obscureText: true, formPropery: 'password', formValues: formValues,
+                obscureText: true,
+                formPropery: 'password',
+                formValues: formValues,
               ),
               SizedBox(height: 30),
+
+              DropdownButtonFormField(
+                items: const [
+                  DropdownMenuItem(value: 'Admin', child: Text('Admin')),
+                  DropdownMenuItem(value: 'SuperUser', child: Text('SuperUser')),
+                  DropdownMenuItem(value: 'Developer', child: Text('Developer')),
+                  DropdownMenuItem(value: 'Junior', child: Text('Junior')),
+                ],
+                onChanged: (value){
+                  print(value);
+                  formValues['role'] = value ?? 'Admin';
+                },
+              ),
 
               ElevatedButton(
                 onPressed: () {
