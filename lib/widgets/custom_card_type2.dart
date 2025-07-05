@@ -1,20 +1,36 @@
+import 'package:fl_components/themes/app_theme_light.dart';
 import 'package:flutter/material.dart';
 
 class CustomCardType2 extends StatelessWidget {
-  const CustomCardType2({super.key});
+  final String imageUrl;
+  final String? name;
+
+  const CustomCardType2({super.key, required this.imageUrl, this.name});
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       elevation: 10,
+      shadowColor: AppThemeLight.primary,
       child: Column(
         children: [
           FadeInImage(
-            image: NetworkImage(
-              'https://cdn11.bigcommerce.com/s-x49po/images/stencil/1500x1500/products/88631/250661/1665576857580_Jungle_House__25247.1687002130.jpg?c=2&imbypass=on',
-            ),
-            placeholder: AssetImage('assets/jar-loading.gif'),
+            image: NetworkImage(imageUrl),
+            placeholder: const AssetImage('assets/jar-loading.gif'),
+            width: double.infinity,
+            height: 230,
+            fit: BoxFit.cover,
+            fadeInDuration: const Duration(microseconds: 300),
           ),
+
+          if (name != null)
+            Container(
+              alignment: AlignmentDirectional.centerEnd,
+              padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),
+              child: Text(name!),
+            ),
         ],
       ),
     );
