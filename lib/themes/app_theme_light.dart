@@ -16,6 +16,23 @@ class AppThemeLight {
       centerTitle: true,
     ),
 
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      foregroundColor: Colors.white,
+      backgroundColor: primary,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      elevation: 5,
+    ),
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        shape: const StadiumBorder(),
+        backgroundColor: primary,
+        foregroundColor: Colors.white,
+        textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      ),
+    ),
+
     // textButtonTheme: TextButtonThemeData(
     //   style: TextButton.styleFrom(foregroundColor: Colors.red),
     // ),
