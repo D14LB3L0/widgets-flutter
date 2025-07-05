@@ -15,5 +15,9 @@ class AppThemeLight {
       ),
       centerTitle: true,
     ),
+
+    // textButtonTheme: TextButtonThemeData(
+    //   style: TextButton.styleFrom(foregroundColor: Colors.red),
+    // ),
   );
 }
